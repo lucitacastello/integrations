@@ -2,6 +2,7 @@ package com.github.lucitacastello.integrations.resources;
 
 import com.github.lucitacastello.integrations.dto.EmailDTO;
 import com.github.lucitacastello.integrations.services.EmailService;
+import com.github.lucitacastello.integrations.services.SendGridEmailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class EmailResource {
 
     @Autowired
-    private EmailService service;
+    private EmailService service; //injeta a Interface
 
     @PostMapping
     public ResponseEntity<Void> send(@RequestBody EmailDTO dto){
